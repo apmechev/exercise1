@@ -1,26 +1,19 @@
 public static int dayOfYear(int month, int dayOfMonth, int year) {
-    if (month == 2) {
-        dayOfMonth += 31;
-    } else if (month == 3) {
-        dayOfMonth += 59;
-    } else if (month == 4) {
-        dayOfMonth += 90;
-    } else if (month == 5) {
-        dayOfMonth += 31 + 28 + 31 + 30;
-    } else if (month == 6) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31;
-    } else if (month == 7) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30;
-    } else if (month == 8) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31;
-    } else if (month == 9) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31;
-    } else if (month == 10) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30;
-    } else if (month == 11) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31;
-    } else if (month == 12) {
-        dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 31;
-    }
+    switch (month) {
+	case 12:  dayOfMonth += 31;
+	case 11: dayOfMonth += 30;
+	case 10: dayOfMonth += 31;
+	case 9:  dayOfMonth += 30;
+	case 8: dayOfMonth += 31;
+	case 7: dayOfMonth += 31;
+	case 6: dayOfMonth += 30;
+	case 5: dayOfMonth += 31;
+	case 4: dayOfMonth += 30;
+	case 3: dayOfMonth += 31;
+	case 2: dayOfMonth += 28; //Leap Years??
+	case 1: break;
+	default: 
+		System.out.println("Invalid month number");
+	}
     return dayOfMonth;
 }
